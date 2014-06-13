@@ -1,0 +1,457 @@
+/* Welcome to Compass.
+ * In this file you should write your main styles. (or centralize your imports)
+ * Import this file using the following HTML or equivalent:
+ * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
+
+
+// Variables
+$zoosk-blue: #66c3ee;
+
+// Mixins
+@mixin scale {
+	-webkit-transform: scale(.5) translate(-50%, -50%) translateZ(0);
+}
+
+@mixin skew {
+	-webkit-transform: skewX(15deg) skewY(15deg) translate(-50%, -50%) translateZ(0);
+}
+
+@mixin rotate {
+	-webkit-transform: rotate(45deg) translate(-50%, -50%) translateZ(0);
+}
+
+@mixin spin {
+	-webkit-transform: rotate(360deg) translate(0, 0) translateZ(0);
+}
+
+@mixin translate {
+	-webkit-transform: translate(5px, 5px) translateZ(0);
+}
+
+
+body {
+	background: darken($zoosk-blue, 50%);
+	font-family: Helvetica, sans-serif;
+}
+
+.reveal {
+	h1 {
+		color: lighten($zoosk-blue, 25%);
+		font-size: 3.7em;
+		margin-bottom: .25em;
+		position: relative;
+		text-shadow: 0 1px 3px rgba(0,0,0,0.3);
+	}
+	
+	h2 {color: #5d989c;}
+	
+	h3 {
+		color: lighten($zoosk-blue, 25%);
+		font-size: 2em;
+		text-shadow: 0 1px 3px rgba(0,0,0,0.3);
+	}
+	
+	blockquote {
+		-webkit-box-shadow: none;
+		-moz-box-shadow: none;
+		box-shadow: none;
+		background: none;
+		border: none;
+		color: #5d989c;
+		font-family: Georgia, serif;
+		font-size: 2em;
+		line-height: 1.25em;
+		margin-bottom: 2em;
+		position: relative;
+		text-align: left;
+		z-index: 2;
+		
+		&:before {
+			color: lighten($zoosk-blue, 25%);
+			content: '"';
+			display: block;
+			font-family: 'Sorts Mill Goudy', serif;
+			font-size: 5em;
+			font-style: italic;
+			left: -20px;
+			opacity: .1;
+			position: absolute;
+			top: 50px;
+			z-index: 1;
+		}
+	}
+	
+	cite {
+		color: lighten($zoosk-blue, 25%);
+		font-size: 1.5em;
+		text-transform: uppercase;
+		
+		.mozilla {
+			background: url('../img/mdn-logo.png');
+			background-size: cover;
+			display: inline-block;
+			height: 22px;
+			vertical-align: baseline;
+			width: 30px;
+		}
+		
+		.css-tricks {
+			background: url('../img/css-tricks-logo.png');
+			background-size: cover;
+			display: inline-block;
+			height: 25px;
+			vertical-align: baseline;
+			width: 24px;
+		}
+	}
+	
+	.helpful-link {
+		color: lighten($zoosk-blue, 25%);
+		font-size: 1.4em;
+		left: 0;
+		right: 0;
+		position: absolute;
+		top: 100%;
+	}
+	
+	.benefit-list {
+		color: #5d989c;
+		font-size: 1.4em;
+		margin-top: 1em;
+		
+		li {margin-bottom: 1em;}
+	}
+	
+	.zoosk-icon-wrapper {
+		background: transparent;
+		border: 4px solid #fff;
+		-webkit-border-radius: 10px;
+		-moz-border-radius: 10px;
+		border-radius: 10px;
+		display: inline-block;
+		height: 150px;
+		margin: 10px; // Look up proper flexbox method for centering in browser
+		position: relative;
+		text-align: center;
+		width: 150px;
+		z-index: 1;
+		-webkit-box-shadow: 0 1px 0 rgba(0,0,0,0.3);
+		-moz-box-shadow: 0 1px 0 rgba(0,0,0,0.3);
+		box-shadow: 0 1px 0 rgba(0,0,0,0.3);
+	}
+	
+	.zoosk-icon {
+		background: $zoosk-blue;
+		-webkit-border-radius: 8px;
+		-moz-border-radius: 8px;
+		border-radius: 8px;
+		display: block;
+		height: 160px;
+		left: 50%;
+		position: absolute;
+		top: 50%;
+		width: 160px;
+		z-index: 100;
+		-webkit-transform: translate(-50%, -50%) translate3d(0,0,0);
+		-webkit-transform-origin: 0 0;
+		-webkit-transition: all 1s;
+		
+		&:before {
+			background: url('../img/zoosk-heart.png') no-repeat;
+			background-size: cover;
+			bottom: 0;
+			content: '';
+			display: block;
+			height: 70px;
+			left: 50%;
+			position: absolute;
+			right: 0;
+			top: 50%;
+			width: 85px;
+			-webkit-transform: translate(-50%, -50%);
+		}
+		
+		&.spin {
+			margin: -80px 0 0 -80px;
+			-webkit-transform: none;
+			-webkit-transition: all 2s;
+			
+			&.spin-tl {-webkit-transform-origin: top left;}
+				
+			&.spin-tr {-webkit-transform-origin: top right;}
+			
+			&.spin-c  {-webkit-transform-origin: center center;}
+			
+			&.spin-bl {-webkit-transform-origin: bottom left;}
+			
+			&.spin-br {-webkit-transform-origin: bottom right;}
+		}
+		
+		&.no-transition {-webkit-transition: none !important;}
+	}
+	
+	.icon-list {
+		margin-top: 3.5em;
+		position: relative;
+		text-align: center;
+		
+		&:hover {
+			.scale {@include scale;}
+			
+			.scale-burst {-webkit-animation: scale-burst 1.5s 1;}
+			
+			.skew {@include skew;}
+			
+			.scale-skew {-webkit-transform: scale(.5) skewX(15deg) skewY(15deg) translate(-50%, -50%);}
+			
+			.rotate-translate {-webkit-transform: rotate(45deg) translate(5px, 5px);}
+			
+			.rotate {@include rotate;}
+			
+			.shutter {
+				background: #fff;
+				-webkit-animation: shutter 1.5s 1;
+			}
+			
+			.translate {@include translate;}
+			
+			.transform-origin-tl:hover {@include scale;}
+			
+			.transform-origin-br:hover {@include rotate;}
+		}
+		
+		&.origin-list {
+			
+			&:hover {
+				.spin {@include spin;}
+			}
+		}
+	}
+	
+	.syntax-icon-list {
+		display: inline-block;
+		margin-top: 3.5em;
+	}
+	
+	.marker {
+		-webkit-border-radius: 50%;
+		-moz-border-radius: 50%;
+		border-radius: 50%;
+		background: #d32027;
+		display: inline-block;
+		height: 20px;
+		position: absolute;
+		width: 20px;
+		
+		&.tl {
+			left: -10px;
+			top: -10px;
+		}
+		
+		&.tr {
+			right: -10px;
+			top: -10px;
+		}
+		
+		&.c {
+			left: 50%;
+			top: 50%;
+			-webkit-transform: translate(-50%, -50%);
+		}
+		
+		&.bl {
+			bottom: -10px;
+			left: -10px;
+		}
+		
+		&.br {
+			bottom: -10px;
+			right: -10px;
+		}
+	}
+	
+	.pitfall-container {
+		margin-top: 3.5em;
+		overflow: hidden;
+		
+		.transform-pitfalls {
+			color: #5d989c;
+			float: left;
+			font-size: 1.5em;
+			line-height: 1.25;
+			width: 50%;
+			
+			li {margin-bottom: 2em;}
+		}
+		
+		.gif-container {
+			border: 10px solid #fff;
+			float: right;
+			width: 36%;
+			
+			img {
+				display: block;
+				max-width: 100%;
+			}
+		}
+	}
+	
+	.important {
+		color: #d32027;
+		font-size: 2em;
+		left: 50%;
+		position: absolute;
+		top: 50%;
+		-webkit-transform: translate(-50%, -50%);
+	}
+	
+	.tween-container {
+		border: 2px solid #000;
+		margin: auto;
+		position: relative;
+		width: 220px;
+		
+		> span {
+			display: block;
+			height: 50px;
+			position: relative;
+			
+			&:before {
+				background: #fff;
+				content: '';
+				display: block;
+				height: 50px;
+			}
+		}
+		
+		.keyframe-step {
+			color: #d32027;
+			font-size: 1.5em;
+			font-weight: bold;
+			left: -80px;
+			position: absolute;
+			top: 18px;
+		}
+		
+		.step-one:before    {opacity: 1;}
+		.step-two:before    {opacity: .9;}
+		.step-three:before  {opacity: .8;}
+		.step-four:before   {opacity: .7;}
+		.step-five:before   {opacity: .6;}
+		.step-six:before    {opacity: .5;}
+		.step-seven:before  {opacity: .4;}
+		.step-eight:before  {opacity: .3;}
+		.step-nine:before   {opacity: .2;}
+		.step-ten:before    {opacity: .1;}
+		.step-eleven:before {opacity: 0;}
+	}
+	
+	.code-box {margin-top: 1.75em;}
+	
+	.property {
+		color: #d31f26;
+		font-size: 22px;
+	}
+	
+	.value {
+		color: #5d989c;
+		font-size: 22px;
+	
+		> span {
+			display: inline-block;
+			margin: 0 5px;
+		}	
+	}
+	
+	.sample-container {
+		background: rgba(255,255,255,.8);
+		-webkit-border-radius: 6px;
+		-moz-border-radius: 6px;
+		border-radius: 6px;
+		box-sizing: border-box;
+		float: right;
+		margin: 2em auto 0;
+		padding: 1.5em;
+		position: relative;
+		width: 650px;
+		-webkit-backface-visibility: hidden;
+		
+		.heart-icon {
+			background: url('../img/zoosk-heart.png') no-repeat;
+			background-size: cover;
+			display: block;
+			height: 66px;
+			margin-top: 1.5em;
+			width: 80px;
+			-webkit-transform: translate(0, 0) translate3d(0,0,0);
+			-webkit-backface-visibility: hidden;
+			
+			&:first-of-type {margin: 0;}
+			
+			&.linear {-webkit-transition: all 1s linear;}
+			&.ease {-webkit-transition: all 1s ease;}
+			&.ease-in {-webkit-transition: all 1s ease-in;}
+			&.ease-out {-webkit-transition: all 1s ease-out;}
+			&.ease-in-out {-webkit-transition: all 1s ease-in-out;}
+		}
+		
+		&:hover {
+			.heart-icon {-webkit-transform: translate(520px, 0);}
+		}
+	}
+	
+	.timing-definitions {
+		color: #5d989c;
+		font-size: 2em;
+		left: -270px;
+		list-style: none;
+		position: absolute;
+		top: 1.5em;
+		
+		li {
+			margin: 72px 0 0 0;
+			
+			&:first-of-type {margin: 0;}
+		}
+	}
+}
+
+.item {
+	display: inline-block;
+	margin: 0 25px;
+	position: relative;
+	vertical-align: top;
+}
+
+.resource-list {
+	li {
+		font-size: 1.25em;
+		list-style: none;
+		margin-top: 1em;
+
+		&:first-child {margin-top: 0;}
+	}
+
+	a {
+		color: #fafafa;
+	}
+}
+
+
+
+
+
+
+@-webkit-keyframes scale-burst {
+	25%    {-webkit-transform: scale(.75) translate(-50%, -50%);}
+	50%    {-webkit-transform: scale(1.25) translate(-50%, -50%);}
+	100%   {opacity: 0;}
+}
+
+@-webkit-keyframes shutter {
+	10%     {background: $zoosk-blue; margin-left: 20px;}
+	20%     {margin-left: -20px;}
+	30%     {margin-left: 20px;}
+	40%     {margin-left: -20px;}
+	80%     {background: #fff;}
+}

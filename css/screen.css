@@ -1,0 +1,359 @@
+/* Welcome to Compass.
+ * In this file you should write your main styles. (or centralize your imports)
+ * Import this file using the following HTML or equivalent:
+ * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
+body {
+  background: #08374d;
+  font-family: Helvetica, sans-serif; }
+
+.reveal h1 {
+  color: #d9f0fb;
+  font-size: 3.7em;
+  margin-bottom: .25em;
+  position: relative;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3); }
+.reveal h2 {
+  color: #5d989c; }
+.reveal h3 {
+  color: #d9f0fb;
+  font-size: 2em;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3); }
+.reveal blockquote {
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+  background: none;
+  border: none;
+  color: #5d989c;
+  font-family: Georgia, serif;
+  font-size: 2em;
+  line-height: 1.25em;
+  margin-bottom: 2em;
+  position: relative;
+  text-align: left;
+  z-index: 2; }
+  .reveal blockquote:before {
+    color: #d9f0fb;
+    content: '"';
+    display: block;
+    font-family: 'Sorts Mill Goudy', serif;
+    font-size: 5em;
+    font-style: italic;
+    left: -20px;
+    opacity: .1;
+    position: absolute;
+    top: 50px;
+    z-index: 1; }
+.reveal cite {
+  color: #d9f0fb;
+  font-size: 1.5em;
+  text-transform: uppercase; }
+  .reveal cite .mozilla {
+    background: url("../img/mdn-logo.png");
+    background-size: cover;
+    display: inline-block;
+    height: 22px;
+    vertical-align: baseline;
+    width: 30px; }
+  .reveal cite .css-tricks {
+    background: url("../img/css-tricks-logo.png");
+    background-size: cover;
+    display: inline-block;
+    height: 25px;
+    vertical-align: baseline;
+    width: 24px; }
+.reveal .helpful-link {
+  color: #d9f0fb;
+  font-size: 1.4em;
+  left: 0;
+  right: 0;
+  position: absolute;
+  top: 100%; }
+.reveal .benefit-list {
+  color: #5d989c;
+  font-size: 1.4em;
+  margin-top: 1em; }
+  .reveal .benefit-list li {
+    margin-bottom: 1em; }
+.reveal .zoosk-icon-wrapper {
+  background: transparent;
+  border: 4px solid #fff;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  border-radius: 10px;
+  display: inline-block;
+  height: 150px;
+  margin: 10px;
+  position: relative;
+  text-align: center;
+  width: 150px;
+  z-index: 1;
+  -webkit-box-shadow: 0 1px 0 rgba(0, 0, 0, 0.3);
+  -moz-box-shadow: 0 1px 0 rgba(0, 0, 0, 0.3);
+  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.3); }
+.reveal .zoosk-icon {
+  background: #66c3ee;
+  -webkit-border-radius: 8px;
+  -moz-border-radius: 8px;
+  border-radius: 8px;
+  display: block;
+  height: 160px;
+  left: 50%;
+  position: absolute;
+  top: 50%;
+  width: 160px;
+  z-index: 100;
+  -webkit-transform: translate(-50%, -50%) translate3d(0, 0, 0);
+  -webkit-transform-origin: 0 0;
+  -webkit-transition: all 1s; }
+  .reveal .zoosk-icon:before {
+    background: url("../img/zoosk-heart.png") no-repeat;
+    background-size: cover;
+    bottom: 0;
+    content: '';
+    display: block;
+    height: 70px;
+    left: 50%;
+    position: absolute;
+    right: 0;
+    top: 50%;
+    width: 85px;
+    -webkit-transform: translate(-50%, -50%); }
+  .reveal .zoosk-icon.spin {
+    margin: -80px 0 0 -80px;
+    -webkit-transform: none;
+    -webkit-transition: all 2s; }
+    .reveal .zoosk-icon.spin.spin-tl {
+      -webkit-transform-origin: top left; }
+    .reveal .zoosk-icon.spin.spin-tr {
+      -webkit-transform-origin: top right; }
+    .reveal .zoosk-icon.spin.spin-c {
+      -webkit-transform-origin: center center; }
+    .reveal .zoosk-icon.spin.spin-bl {
+      -webkit-transform-origin: bottom left; }
+    .reveal .zoosk-icon.spin.spin-br {
+      -webkit-transform-origin: bottom right; }
+  .reveal .zoosk-icon.no-transition {
+    -webkit-transition: none !important; }
+.reveal .icon-list {
+  margin-top: 3.5em;
+  position: relative;
+  text-align: center; }
+  .reveal .icon-list:hover .scale {
+    -webkit-transform: scale(0.5) translate(-50%, -50%) translateZ(0); }
+  .reveal .icon-list:hover .scale-burst {
+    -webkit-animation: scale-burst 1.5s 1; }
+  .reveal .icon-list:hover .skew {
+    -webkit-transform: skewX(15deg) skewY(15deg) translate(-50%, -50%) translateZ(0); }
+  .reveal .icon-list:hover .scale-skew {
+    -webkit-transform: scale(0.5) skewX(15deg) skewY(15deg) translate(-50%, -50%); }
+  .reveal .icon-list:hover .rotate-translate {
+    -webkit-transform: rotate(45deg) translate(5px, 5px); }
+  .reveal .icon-list:hover .rotate {
+    -webkit-transform: rotate(45deg) translate(-50%, -50%) translateZ(0); }
+  .reveal .icon-list:hover .shutter {
+    background: #fff;
+    -webkit-animation: shutter 1.5s 1; }
+  .reveal .icon-list:hover .translate {
+    -webkit-transform: translate(5px, 5px) translateZ(0); }
+  .reveal .icon-list:hover .transform-origin-tl:hover {
+    -webkit-transform: scale(0.5) translate(-50%, -50%) translateZ(0); }
+  .reveal .icon-list:hover .transform-origin-br:hover {
+    -webkit-transform: rotate(45deg) translate(-50%, -50%) translateZ(0); }
+  .reveal .icon-list.origin-list:hover .spin {
+    -webkit-transform: rotate(360deg) translate(0, 0) translateZ(0); }
+.reveal .syntax-icon-list {
+  display: inline-block;
+  margin-top: 3.5em; }
+.reveal .marker {
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  border-radius: 50%;
+  background: #d32027;
+  display: inline-block;
+  height: 20px;
+  position: absolute;
+  width: 20px; }
+  .reveal .marker.tl {
+    left: -10px;
+    top: -10px; }
+  .reveal .marker.tr {
+    right: -10px;
+    top: -10px; }
+  .reveal .marker.c {
+    left: 50%;
+    top: 50%;
+    -webkit-transform: translate(-50%, -50%); }
+  .reveal .marker.bl {
+    bottom: -10px;
+    left: -10px; }
+  .reveal .marker.br {
+    bottom: -10px;
+    right: -10px; }
+.reveal .pitfall-container {
+  margin-top: 3.5em;
+  overflow: hidden; }
+  .reveal .pitfall-container .transform-pitfalls {
+    color: #5d989c;
+    float: left;
+    font-size: 1.5em;
+    line-height: 1.25;
+    width: 50%; }
+    .reveal .pitfall-container .transform-pitfalls li {
+      margin-bottom: 2em; }
+  .reveal .pitfall-container .gif-container {
+    border: 10px solid #fff;
+    float: right;
+    width: 36%; }
+    .reveal .pitfall-container .gif-container img {
+      display: block;
+      max-width: 100%; }
+.reveal .important {
+  color: #d32027;
+  font-size: 2em;
+  left: 50%;
+  position: absolute;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%); }
+.reveal .tween-container {
+  border: 2px solid #000;
+  margin: auto;
+  position: relative;
+  width: 220px; }
+  .reveal .tween-container > span {
+    display: block;
+    height: 50px;
+    position: relative; }
+    .reveal .tween-container > span:before {
+      background: #fff;
+      content: '';
+      display: block;
+      height: 50px; }
+  .reveal .tween-container .keyframe-step {
+    color: #d32027;
+    font-size: 1.5em;
+    font-weight: bold;
+    left: -80px;
+    position: absolute;
+    top: 18px; }
+  .reveal .tween-container .step-one:before {
+    opacity: 1; }
+  .reveal .tween-container .step-two:before {
+    opacity: .9; }
+  .reveal .tween-container .step-three:before {
+    opacity: .8; }
+  .reveal .tween-container .step-four:before {
+    opacity: .7; }
+  .reveal .tween-container .step-five:before {
+    opacity: .6; }
+  .reveal .tween-container .step-six:before {
+    opacity: .5; }
+  .reveal .tween-container .step-seven:before {
+    opacity: .4; }
+  .reveal .tween-container .step-eight:before {
+    opacity: .3; }
+  .reveal .tween-container .step-nine:before {
+    opacity: .2; }
+  .reveal .tween-container .step-ten:before {
+    opacity: .1; }
+  .reveal .tween-container .step-eleven:before {
+    opacity: 0; }
+.reveal .code-box {
+  margin-top: 1.75em; }
+.reveal .property {
+  color: #d31f26;
+  font-size: 22px; }
+.reveal .value {
+  color: #5d989c;
+  font-size: 22px; }
+  .reveal .value > span {
+    display: inline-block;
+    margin: 0 5px; }
+.reveal .sample-container {
+  background: rgba(255, 255, 255, 0.8);
+  -webkit-border-radius: 6px;
+  -moz-border-radius: 6px;
+  border-radius: 6px;
+  box-sizing: border-box;
+  float: right;
+  margin: 2em auto 0;
+  padding: 1.5em;
+  position: relative;
+  width: 650px;
+  -webkit-backface-visibility: hidden; }
+  .reveal .sample-container .heart-icon {
+    background: url("../img/zoosk-heart.png") no-repeat;
+    background-size: cover;
+    display: block;
+    height: 66px;
+    margin-top: 1.5em;
+    width: 80px;
+    -webkit-transform: translate(0, 0) translate3d(0, 0, 0);
+    -webkit-backface-visibility: hidden; }
+    .reveal .sample-container .heart-icon:first-of-type {
+      margin: 0; }
+    .reveal .sample-container .heart-icon.linear {
+      -webkit-transition: all 1s linear; }
+    .reveal .sample-container .heart-icon.ease {
+      -webkit-transition: all 1s ease; }
+    .reveal .sample-container .heart-icon.ease-in {
+      -webkit-transition: all 1s ease-in; }
+    .reveal .sample-container .heart-icon.ease-out {
+      -webkit-transition: all 1s ease-out; }
+    .reveal .sample-container .heart-icon.ease-in-out {
+      -webkit-transition: all 1s ease-in-out; }
+  .reveal .sample-container:hover .heart-icon {
+    -webkit-transform: translate(520px, 0); }
+.reveal .timing-definitions {
+  color: #5d989c;
+  font-size: 2em;
+  left: -270px;
+  list-style: none;
+  position: absolute;
+  top: 1.5em; }
+  .reveal .timing-definitions li {
+    margin: 72px 0 0 0; }
+    .reveal .timing-definitions li:first-of-type {
+      margin: 0; }
+
+.item {
+  display: inline-block;
+  margin: 0 25px;
+  position: relative;
+  vertical-align: top; }
+
+.resource-list li {
+  font-size: 1.25em;
+  list-style: none;
+  margin-top: 1em; }
+  .resource-list li:first-child {
+    margin-top: 0; }
+.resource-list a {
+  color: #fafafa; }
+
+@-webkit-keyframes scale-burst {
+  25% {
+    -webkit-transform: scale(0.75) translate(-50%, -50%); }
+
+  50% {
+    -webkit-transform: scale(1.25) translate(-50%, -50%); }
+
+  100% {
+    opacity: 0; } }
+
+@-webkit-keyframes shutter {
+  10% {
+    background: #66c3ee;
+    margin-left: 20px; }
+
+  20% {
+    margin-left: -20px; }
+
+  30% {
+    margin-left: 20px; }
+
+  40% {
+    margin-left: -20px; }
+
+  80% {
+    background: #fff; } }
